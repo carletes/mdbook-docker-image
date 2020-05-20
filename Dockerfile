@@ -1,10 +1,6 @@
-# syntax=docker/dockerfile:experimental
-
 FROM debian:buster-slim AS build
 
 RUN \
-  --mount=type=cache,target=/var/cache/apt,id=apt-cache,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,id=apt-lib,sharing=locked \
   set -eux \
   && apt-get update \
   && apt-get install --yes --no-install-suggests --no-install-recommends \
